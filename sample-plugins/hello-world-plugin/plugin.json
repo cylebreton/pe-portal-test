@@ -1,0 +1,85 @@
+{
+  "id": "hello-world-plugin",
+  "name": "Hello World Plugin",
+  "version": "1.0.0",
+  "author": "PE Investor Portal Team",
+  "authorEmail": "plugins@investorportal.com",
+  "description": "A sample plugin demonstrating all plugin system features including dashboard widgets, menus, context API, and lifecycle hooks",
+  "coreVersion": ">=1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/example/hello-world-plugin",
+  "homepage": "https://example.com/plugins/hello-world",
+  "keywords": ["sample", "demo", "hello-world", "widgets"],
+
+  "menus": [
+    {
+      "id": "hello-world-main-menu",
+      "label": "Hello World",
+      "type": "main",
+      "icon": "pi pi-globe",
+      "route": "/plugins/hello-world",
+      "order": 100,
+      "permissions": []
+    }
+  ],
+
+  "widgets": [
+    {
+      "id": "hello-top-widget",
+      "name": "Welcome Banner",
+      "component": "WelcomeBanner",
+      "slot": "dashboard-top",
+      "order": 1,
+      "permissions": [],
+      "props": {
+        "message": "Hello from the plugin system!"
+      }
+    },
+    {
+      "id": "hello-stats-card",
+      "name": "Plugin Stats Card",
+      "component": "PluginStatsCard",
+      "slot": "dashboard-stats",
+      "order": 5,
+      "permissions": []
+    },
+    {
+      "id": "hello-sidebar-widget",
+      "name": "Quick Actions",
+      "component": "QuickActionsWidget",
+      "slot": "dashboard-sidebar",
+      "order": 1,
+      "permissions": []
+    },
+    {
+      "id": "hello-main-widget",
+      "name": "Activity Chart",
+      "component": "ActivityChartWidget",
+      "slot": "dashboard-main",
+      "order": 1,
+      "permissions": []
+    }
+  ],
+
+  "hooks": {
+    "onInstall": true,
+    "onUninstall": true
+  },
+
+  "permissions": [],
+
+  "dependencies": {},
+
+  "settings": {
+    "welcomeMessage": {
+      "type": "string",
+      "default": "Welcome to Hello World Plugin!",
+      "description": "Message shown in the welcome banner"
+    },
+    "showStatistics": {
+      "type": "boolean",
+      "default": true,
+      "description": "Show plugin statistics"
+    }
+  }
+}
