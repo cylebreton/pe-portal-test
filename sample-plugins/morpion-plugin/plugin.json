@@ -1,0 +1,53 @@
+{
+  "id": "morpion-plugin",
+  "name": "Morpion (Tic-Tac-Toe)",
+  "version": "1.0.0",
+  "author": "PE Investor Portal Team",
+  "authorEmail": "plugins@investorportal.com",
+  "description": "Jeu du morpion avec une page dédiée et un widget de score pour le tableau de bord",
+  "coreVersion": ">=1.0.0",
+  "license": "MIT",
+  "repository": "https://example.com/morpion-plugin",
+  "homepage": "https://example.com/morpion-plugin",
+  "keywords": ["morpion", "tic-tac-toe", "jeu", "widget"],
+
+  "menus": [
+    {
+      "id": "morpion-main-menu",
+      "label": "Morpion",
+      "type": "main",
+      "icon": "pi pi-th-large",
+      "route": "/plugins/morpion",
+      "order": 110,
+      "permissions": []
+    }
+  ],
+
+  "widgets": [
+    {
+      "id": "morpion-score-widget",
+      "name": "Score Morpion",
+      "component": "ScoreboardWidget",
+      "slot": "dashboard-stats",
+      "order": 6,
+      "permissions": []
+    }
+  ],
+
+  "hooks": {
+    "onInstall": true,
+    "onUninstall": true
+  },
+
+  "permissions": [],
+  "dependencies": {},
+
+  "settings": {
+    "startingPlayer": {
+      "type": "string",
+      "default": "X",
+      "description": "Joueur qui commence la partie (X ou O)"
+    }
+  }
+}
+
